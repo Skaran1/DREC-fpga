@@ -6,6 +6,6 @@ module d_flip_flop
     output wire nq
 );
 wire s0;
-d_latch my_sr_l(.d(d), .e(~e), .q(s0), .nq());
-d_latch my_sr_l(.d(s0), .e(e), .q(q), .nq(nq));
+d_latch my_sr_l(.d(d), .e(~clk), .q(s0), .nq());
+d_latch my_sr_l(.d(s0), .e(clk), .q(q), .nq(nq));
 endmodule
