@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at master.v(15): always construct contains both blocking and non-blocking assignments File: /home/nikita/FPGA/3/master.v Line: 15
+Warning (10268): Verilog HDL information at slave.v(15): always construct contains both blocking and non-blocking assignments File: /home/nikita/FPGA/3/slave.v Line: 15

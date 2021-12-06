@@ -1,0 +1,139 @@
+|top
+CLK => CLK.IN1
+DS_EN1 << seven_seg:s_seg1.enpos
+DS_EN2 << seven_seg:s_seg1.enpos
+DS_EN3 << seven_seg:s_seg1.enpos
+DS_EN4 << seven_seg:s_seg1.enpos
+DS_A << seven_seg:s_seg1.seg
+DS_B << seven_seg:s_seg1.seg
+DS_C << seven_seg:s_seg1.seg
+DS_D << seven_seg:s_seg1.seg
+DS_E << seven_seg:s_seg1.seg
+DS_F << seven_seg:s_seg1.seg
+DS_G << seven_seg:s_seg1.seg
+DS_DP << seven_seg:s_seg1.seg
+
+
+|top|master:my_master1
+clk => temp[0].CLK
+clk => temp[1].CLK
+clk => temp[2].CLK
+clk => temp[3].CLK
+clk => temp[4].CLK
+clk => temp[5].CLK
+clk => temp[6].CLK
+clk => temp[7].CLK
+clk => mosi_reg.CLK
+miso => temp[0].DATAIN
+mosi <= mosi_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|slave:my_slave1
+clk => temp[0].CLK
+clk => temp[1].CLK
+clk => temp[2].CLK
+clk => temp[3].CLK
+clk => temp[4].CLK
+clk => temp[5].CLK
+clk => temp[6].CLK
+clk => temp[7].CLK
+clk => miso_reg.CLK
+mosi => temp[0].DATAIN
+miso <= miso_reg.DB_MAX_OUTPUT_PORT_TYPE
+memory[0] <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
+memory[1] <= temp[1].DB_MAX_OUTPUT_PORT_TYPE
+memory[2] <= temp[2].DB_MAX_OUTPUT_PORT_TYPE
+memory[3] <= temp[3].DB_MAX_OUTPUT_PORT_TYPE
+memory[4] <= temp[4].DB_MAX_OUTPUT_PORT_TYPE
+memory[5] <= temp[5].DB_MAX_OUTPUT_PORT_TYPE
+memory[6] <= temp[6].DB_MAX_OUTPUT_PORT_TYPE
+memory[7] <= temp[7].DB_MAX_OUTPUT_PORT_TYPE
+memory[8] <= <GND>
+memory[9] <= <GND>
+memory[10] <= <GND>
+memory[11] <= <GND>
+memory[12] <= <GND>
+memory[13] <= <GND>
+memory[14] <= <GND>
+memory[15] <= <GND>
+
+
+|top|seven_seg:s_seg1
+clk => cnt.CLK
+clk => i[0].CLK
+clk => i[1].CLK
+clk => i[2].CLK
+clk => i[3].CLK
+clk => i[4].CLK
+clk => i[5].CLK
+clk => i[6].CLK
+clk => i[7].CLK
+clk => i[8].CLK
+clk => i[9].CLK
+clk => i[10].CLK
+clk => i[11].CLK
+clk => i[12].CLK
+clk => i[13].CLK
+clk => i[14].CLK
+clk => i[15].CLK
+clk => i[16].CLK
+clk => i[17].CLK
+clk => i[18].CLK
+clk => i[19].CLK
+clk => i[20].CLK
+clk => i[21].CLK
+clk => i[22].CLK
+clk => i[23].CLK
+clk => i[24].CLK
+clk => i[25].CLK
+clk => i[26].CLK
+clk => i[27].CLK
+clk => i[28].CLK
+clk => i[29].CLK
+clk => i[30].CLK
+clk => i[31].CLK
+in_num[0] => Mux0.IN14
+in_num[1] => Mux1.IN14
+in_num[2] => Mux2.IN14
+in_num[3] => Mux3.IN14
+in_num[4] => Mux0.IN10
+in_num[5] => Mux1.IN10
+in_num[6] => Mux2.IN10
+in_num[7] => Mux3.IN10
+in_num[8] => Mux0.IN6
+in_num[9] => Mux1.IN6
+in_num[10] => Mux2.IN6
+in_num[11] => Mux3.IN6
+in_num[12] => Mux0.IN2
+in_num[13] => Mux1.IN2
+in_num[14] => Mux2.IN2
+in_num[15] => Mux3.IN2
+enpos[0] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+enpos[1] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+enpos[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+enpos[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= h2seg:h2seg4.z
+seg[1] <= h2seg:h2seg4.z
+seg[2] <= h2seg:h2seg4.z
+seg[3] <= h2seg:h2seg4.z
+seg[4] <= h2seg:h2seg4.z
+seg[5] <= h2seg:h2seg4.z
+seg[6] <= h2seg:h2seg4.z
+seg[7] <= h2seg:h2seg4.z
+
+
+|top|seven_seg:s_seg1|h2seg:h2seg4
+x[0] => Decoder0.IN3
+x[1] => Decoder0.IN2
+x[2] => Decoder0.IN1
+x[3] => Decoder0.IN0
+z[0] <= <GND>
+z[1] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+z[3] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+z[4] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+z[5] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+z[6] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+z[7] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
